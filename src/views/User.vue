@@ -16,7 +16,7 @@
             alt=""
           />
         </div>
-        <div class="right">
+        <div class="right" @click="login">
           <h5>立即登录</h5>
         </div>
       </div>
@@ -55,7 +55,7 @@
     <!-- 设置 -->
     <div class="set">
         <van-cell-group>
-          <van-cell title="我的订单" is-link value="全部订单" />
+          <van-cell title="设置" is-link />
           <van-cell title="好礼不停" is-link />
         </van-cell-group>
     </div>
@@ -68,7 +68,20 @@
 
 <script>
 export default {
-  methods: {}
+  methods: {
+      login(){
+      this.$router.push({
+        path:'/login'
+      })
+    }
+  },
+  // mutations:{
+  //   login(){
+  //     this.$router.push({
+  //       path:'/login'
+  //     })
+  //   }
+  // }
 };
 </script>
 
@@ -87,8 +100,8 @@ export default {
   flex-direction: column;
 }
 header {
-  /* height: 46px; */
-  height:30px;
+  height: 45px;
+  /* height:32px; */
   background: red;
   position: relative;
 }
@@ -96,6 +109,7 @@ header .van-icon{
     position: absolute;
     right:1rem;
     top: 1rem;
+    font-size: 1.5rem;
 }
 section {
   flex: 1;
@@ -105,7 +119,7 @@ section {
 /* 头像 */
 .login {
   /* width:100%; */
-  height: 5rem;
+  /* height: 5rem; */
   background: red;
   padding: 0 1rem;
   display: flex;
@@ -132,25 +146,26 @@ section {
 }
 /* 导航 */
 .nav {
-  background: linear-gradient(red, white);
+ background: red;
   height: 5rem;
   padding: 0 1rem;
 }
 .nav ul {
   display: flex;
-  height: 3rem;
-  line-height: 3rem;
+  height: 4rem;
+  line-height: 4rem;
   justify-content: space-between;
   font-size: 0.8rem;
 }
 /* 全部订单 */
 .seek {
-  height: 2rem;
+   background: linear-gradient(red, white);
+  height: 3rem;
   position: relative;
 }
 .seek .van-cell-group {
   width: 90%;
-  height: 2rem;
+  height: 3rem;
   position: absolute;
   left: 5%;
   top: -1rem;
@@ -159,9 +174,9 @@ section {
   border-radius: 5px;
   box-shadow: 0 0 20px red;
 }
-.seek .van-cell {
-  height: 1.9rem;
-  line-height: 1.9rem;
+.seek .van-cell ,.seek .van-icon{
+  height: 3rem;
+  line-height: 3rem;
 }
 /* 设置 */
 .set{
@@ -172,11 +187,11 @@ section {
     border-bottom: 0.3rem solid #ccc;
 }
 .set .van-icon{
-    margin-top: 0.25rem;
+    margin-top: 0.5em;
 }
 .set .van-cell{
-    height: 2rem;
-    line-height: 2rem;
+    height: 3rem;
+    line-height: 3rem;
     padding:0 1rem;
 }
 
